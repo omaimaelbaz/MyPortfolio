@@ -17,4 +17,7 @@ use App\Http\Controllers\UserController;
 
 // Route::get('/test',[UserController::class,'indexc']);
 
+Route::get('/',[UserController::class,'index']);
+Route::get('/admin',[UserController::class,'admin']);
+
 

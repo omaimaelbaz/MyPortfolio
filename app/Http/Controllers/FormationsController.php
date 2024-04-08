@@ -9,7 +9,7 @@ class FormationsController extends Controller
 {
     public function getformation()
     {
-        $data = Formations::all();
+        $data = Formations::get();
         // dd($data);
         return response()->json($data);
 

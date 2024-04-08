@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-md-12 heading-section ftco-animate">
                 <h1 class="big">Dashboard</h1>
-                <h2 class="mb-4">Formation Table</h2>
+                <h2 class="mb-4">Information Table</h2>
                 <button type="button" class="btn btn-primary mb-3">
                     add info
                 </button>
@@ -31,7 +31,7 @@
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
-                        <tbody id="formation-table-body"></tbody>
+                        <tbody id="iformation-table-body"></tbody>
                     </table>
                 </div>
             </div>
@@ -42,7 +42,7 @@
         fetch('/api/info')
             .then(response => response.json())
             .then(data => {
-                const tableBody = document.getElementById('formation-table-body');
+                const tableBody = document.getElementById('iformation-table-body');
                 data.forEach(info => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
@@ -51,6 +51,57 @@
                         <td>${info.adresse}</td>
                         <td>${info.telephone}</td>
                         <td>${info.email}</td>
+                        <td>
+                            <a href="#" class="btn btn-secondary">Update</a>
+                            <a href="#" class="btn btn-danger">Delete</a>
+                        </td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+
+                    {{-- formation table  --}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 heading-section ftco-animate">
+                <h2 class="mb-4">Formation Table</h2>
+                <button type="button" class="btn btn-primary mb-3">
+                    add formation
+                </button>
+
+
+                <div class="table-responsive-md">
+                    <table class="table table-primary">
+                        <thead>
+                            <tr>
+                                <th scope="col">diplome</th>
+                                <th scope="col">etablissement</th>
+                                <th scope="col">lieu</th>
+                                <th scope="col">annee_obtention</th>
+                                <th scope="col">action</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="formation"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        fetch('/api/formation')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById('formation');
+                data.forEach(formation => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${formation.diplome}</td>
+                        <td>${formation.etablissement}</td>
+                        <td>${formation.lieu}</td>
+                        <td>${formation.annee_obtention}</td>
                         <td>
                             <a href="#" class="btn btn-secondary">Update</a>
                             <a href="#" class="btn btn-danger">Delete</a>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FormationsController;
 use App\Http\Controllers\InformationsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -37,7 +38,10 @@ Route::get('/login', [AuthController::class, 'login']);
 
 
 
-Route::get('/',[UserController::class,'index']);
-Route::get('/admin',[UserController::class,'admin']);
+
 // iformation table
 Route::get('/info',[InformationsController::class,'getInfo']);
+
+//formation table
+
+Route::get('/formation',[FormationsController::class,'getformation']);
