@@ -9,10 +9,21 @@ use MongoDB\Laravel\Eloquent\Model;
 
 class UserController extends Controller
 {
-    // show all users
     public function index()
     {
-        $data = User::get();
+        return view('user.index');
+
+    }
+    public function admin()
+    {
+        return view('admin.admin');
+
+    }
+    // show all users
+    public function getUsers()
+    {
+        $data = User::all();
+        // dd($data);
         return response()->json($data);
 
     }

@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
+
 class AuthController extends Controller
 {
     // auth user
@@ -14,7 +15,7 @@ public function register(Request $request)
 
     $request->validate([
         'name' => 'required',
-        'email' => 'required|email|unique',
+        'email' => 'required|email|',
         'password' => 'required'
     ]);
 
