@@ -240,7 +240,11 @@
                         <div id="page-1" class="page one">
                             <h2 class="heading">Education</h2>
                             <div id="formation" class="ftco-animate">
-                                <!-- Fetched data will be inserted here -->
+
+
+                                <!-- Fetched data here -->
+
+
                             </div>
                         </div>
                     </div>
@@ -251,7 +255,6 @@
                             .then(data => {
                                 const formationContainer = document.getElementById('formation');
 
-                                // Loop through the fetched data and create elements for each education entry
                                 data.forEach(education => {
                                     const formationDiv = document.createElement('div');
                                     formationDiv.classList.add('resume-wrap', 'd-flex');
@@ -268,7 +271,6 @@
                                         </div>
                                     `;
 
-                                    // Append the formation entry to the container
                                     formationContainer.appendChild(formationDiv);
                                 });
                             })
@@ -358,6 +360,8 @@
                             </div>
                         </div>
                     </div>
+
+                    
                     <div id="page-3" class= "page three">
                         <h2 class="heading">Skills</h2>
                         <div class="row progress-circle mb-5">

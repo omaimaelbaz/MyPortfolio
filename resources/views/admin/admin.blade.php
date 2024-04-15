@@ -91,7 +91,7 @@
         </div>
     </div>
     <script>
-        fetch('/api/formation')
+        fetch('/api/experience')
             .then(response => response.json())
             .then(data => {
                 const tableBody = document.getElementById('formation');

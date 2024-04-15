@@ -45,3 +45,9 @@ Route::get('/info',[InformationsController::class,'getInfo']);
 //formation table
 
 Route::get('/formation',[FormationsController::class,'getformation']);
+
+// experience table
+
+Route::get('/experience',[FormationsController::class,'getexperience']);
+
+
