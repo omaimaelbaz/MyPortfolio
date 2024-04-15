@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ExperiencesController;
 use App\Http\Controllers\FormationsController;
 use App\Http\Controllers\InformationsController;
 use App\Http\Controllers\UserController;
@@ -48,6 +49,6 @@ Route::get('/formation',[FormationsController::class,'getformation']);
 
 // experience table
 
-Route::get('/experience',[FormationsController::class,'getexperience']);
+Route::get('/experience',[ExperiencesController::class,'getexperience']);
 
 

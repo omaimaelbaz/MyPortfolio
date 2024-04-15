@@ -278,23 +278,23 @@
                     </script>
 
 
+                    {{-- Experience section   --}}
+
+
 
                     <div id="page-2" class= "page two">
                         <h2 class="heading">Experience</h2>
-                        <div class="resume-wrap d-flex ftco-animate">
-                            <div class="icon d-flex align-items-center justify-content-center">
-                                <span class="flaticon-ideas"></span>
-                            </div>
-                            <div class="text pl-3">
+                        <div class="resume-wrap d-flex ftco-animate" id="experience">
+                            {{--  <div class="text pl-3">
                                 <span class="date">2014-2015</span>
                                 <h2>Software Developer</h2>
                                 <span class="position">Cambridge University</span>
                                 <p>A small river named Duden flows by their place and supplies it with the necessary
                                     regelialia. It is a paradisematic country, in which roasted parts of sentences fly
-                                    into your mouth.</p>
+                                    into your mouth.</p>  --}}
                             </div>
                         </div>
-                        <div class="resume-wrap d-flex ftco-animate">
+                        {{--  <div class="resume-wrap d-flex ftco-animate">
                             <div class="icon d-flex align-items-center justify-content-center">
                                 <span class="flaticon-ideas"></span>
                             </div>
@@ -358,10 +358,75 @@
                                     regelialia. It is a paradisematic country, in which roasted parts of sentences fly
                                     into your mouth.</p>
                             </div>
-                        </div>
+                        </div>  --}}
                     </div>
+{{--
+                    <script>
+                        fetch('/api/experience')
+                            .then(response => response.json())
+                            .then(data => {
+                                const experienceContainer = document.getElementById('experience');
 
-                    
+                                data.forEach(experience => {
+                                    const { poste, entreprise, date_debut, date_fin, responsabilites } = experience;
+
+                                    const experienceDiv = document.createElement('div');
+                                    experienceDiv.classList.add;
+
+                                    experienceDiv.innerHTML = `
+                                        <div class="text pl-3">
+                                            <span class="date">${date_debut} - ${date_fin}</span>
+                                            <h2>${poste}</h2>
+                                            <span class="position">${entreprise}</span>
+                                            <p>A small river named Duden flows by their place and supplies it with the necessary
+                                                regelialia. It is a paradisematic country,</p>
+                                        </div>
+                                    `;
+
+                                    experienceContainer.appendChild(experienceDiv);
+                                });
+                            })
+                            .catch(error => console.error('Error fetching data:', error));
+                    </script>  --}}
+
+                    <script>
+                        fetch('/api/experience')
+                            .then(response => response.json())
+                            .then(data => {
+                                const experienceContainer = document.getElementById('experience');
+
+                                data.forEach(experience => {
+                                    const { poste, entreprise, date_debut, date_fin, responsabilites } = experience;
+
+                                    const experienceDiv = document.createElement('div');
+                                    experienceDiv.classList.add();
+
+                                    experienceDiv.innerHTML = `
+                                       
+                                        <div class="text pl-3">
+                                            <span class="date">${date_debut} - ${date_fin}</span>
+                                            <h2>${poste}</h2>
+                                            <span class="position">${entreprise}</span>
+                                            <p>A small river named Duden flows by their place and supplies it with the necessary
+                                                regelialia. It is a paradisematic country</p>
+                                        </div>
+                                    `;
+
+                                    experienceContainer.appendChild(experienceDiv);
+                                });
+                            })
+                            .catch(error => console.error('Error fetching data:', error));
+                    </script>
+
+
+
+
+
+
+
+
+
+
                     <div id="page-3" class= "page three">
                         <h2 class="heading">Skills</h2>
                         <div class="row progress-circle mb-5">

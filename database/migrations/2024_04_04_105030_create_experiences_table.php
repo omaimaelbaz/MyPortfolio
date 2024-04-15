@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('date_debut');
             $table->date('date_fin')->nullable();
             $table->text('responsabilites')->nullable();
+            
             $table->timestamps();
         });
     }

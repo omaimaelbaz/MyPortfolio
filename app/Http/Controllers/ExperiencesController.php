@@ -11,7 +11,7 @@ class ExperiencesController extends Controller
     public function getexperience()
     {
         $data = Experiences::get();
-        // dd($data);
+        //  dd($data);
         return response()->json($data);
 
     }
