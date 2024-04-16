@@ -14,6 +14,10 @@ class FormationsController extends Controller
         return response()->json($data);
 
     }
+    public function addformation()
+    {
+        return view('admin.addformation');
+    }
 
     public function store(Request $request)
     {
@@ -27,5 +31,32 @@ class FormationsController extends Controller
 
         return response()->json(['message' => 'Formation created successfully']);
 
+    }
+    public function updateFormation(Request $request,$id)
+    {
+        $formation= Formations::find($id);
+
+        $validatedData = $request->validate([
+            "diplome" => 'required',
+            "etablissement" => 'required',
+            "lieu" => 'required',
+            "annee_obtention" => 'required'
+        ]);
+        $formation->update($validatedData);
+
+        return response()->json(['message' => 'Formation updated successfully', 'formation' => $formation]);
+
+    }
+    public function deleteFormation($id)
+    {
+        $formation = Formations::find($id);
+
+        if (!$formation) {
+            return response()->json(['message' => 'Formation not found'], 404);
+        }
+
+        $formation->delete();
+
+        return response()->json(['message' => 'Formation deleted successfully']);
     }
 }

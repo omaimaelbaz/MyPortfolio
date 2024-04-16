@@ -47,6 +47,7 @@ Route::get('/info',[InformationsController::class,'getInfo']);
 
 Route::get('/formation',[FormationsController::class,'getformation']);
 
+
 // experience table
 
 Route::get('/experience',[ExperiencesController::class,'getexperience']);

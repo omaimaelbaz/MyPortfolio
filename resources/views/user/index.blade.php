@@ -106,10 +106,11 @@
                     </div>
 
                     <script>
+                        const InfoList = document.getElementById('about');
+
                         fetch('/api/info')
                             .then(response => response.json())
                             .then(data => {
-                                const InfoList = document.getElementById('about');
                                 InfoList.innerHTML = `
                                 <li class="d-flex"><span>Last name:</span> <span>${data[0].nom}</span></li>
                                 <li class="d-flex"><span>Name:</span> <span>${data[0].prenom}</span></li>
@@ -250,10 +251,11 @@
                     </div>
 
                     <script>
+                        const formationContainer = document.getElementById('formation');
+
                         fetch('/api/formation')
                             .then(response => response.json())
                             .then(data => {
-                                const formationContainer = document.getElementById('formation');
 
                                 data.forEach(education => {
                                     const formationDiv = document.createElement('div');
@@ -402,7 +404,7 @@
                                     experienceDiv.classList.add();
 
                                     experienceDiv.innerHTML = `
-                                       
+
                                         <div class="text pl-3">
                                             <span class="date">${date_debut} - ${date_fin}</span>
                                             <h2>${poste}</h2>
