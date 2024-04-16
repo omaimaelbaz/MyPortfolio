@@ -14,10 +14,7 @@ class FormationsController extends Controller
         return response()->json($data);
 
     }
-    public function addformation()
-    {
-        return view('admin.addformation');
-    }
+   
 
     public function store(Request $request)
     {

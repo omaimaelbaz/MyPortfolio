@@ -45,7 +45,7 @@ class ExperiencesController extends Controller
     }
     public function updateExperience(Request $request,$id)
     {
-        $validateData = $request->validate([
+        $validatedData = $request->validate([
             "poste"=>"required",
             "entreprise"=>"required",
             "lieu"=>"required",
@@ -54,7 +54,23 @@ class ExperiencesController extends Controller
             "responsabilites"=>"required",
 
             ]);
-        
+
+            $data = Experiences::find($id);
+            if (!$data) {
+                return response()->json(['message' => 'exp non trouvé'], 404);
+            }
+            $data->poste = $validatedData['poste'];
+            $data->entreprise = $validatedData['entreprise'];
+            $data->lieu = $validatedData['lieu'];
+            $data->date_debut = $validatedData['date_debut'];
+            $data->date_fin = $validatedData['date_fin'];
+            $data->responsabilites = $validatedData['responsabilites'];
+
+            $data->save();
+
+            return response()->json(['message' => 'Modification effectuée avec succès'], 200);
+
+
 
     }
 

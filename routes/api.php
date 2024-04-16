@@ -46,10 +46,16 @@ Route::get('/info',[InformationsController::class,'getInfo']);
 //formation table
 
 Route::get('/formation',[FormationsController::class,'getformation']);
+Route::post('/create', [FormationsController::class, 'store']);
+Route::post('/update/{id}', [FormationsController::class, 'updateFormation']);
+Route::get('/delete/{id}', [FormationsController::class, 'deleteFormation']);
 
 
 // experience table
 
 Route::get('/experience',[ExperiencesController::class,'getexperience']);
+Route::post('/create', [ExperiencesController::class, 'createExperience']);
+Route::post('/update/{id}', [ExperiencesController::class, 'updateExperience']);
+Route::get('/delete/{id}', [ExperiencesController::class, 'deleteExperience']);
 
 
