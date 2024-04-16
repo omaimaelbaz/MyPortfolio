@@ -127,8 +127,6 @@
     window.addEventListener('load', handlePageLoad);
 </script>
 
-</body>
-</html>
 
 
 
