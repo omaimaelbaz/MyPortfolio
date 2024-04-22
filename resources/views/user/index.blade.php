@@ -95,11 +95,7 @@
                                 Je suis motivée par l'opportunité de relever des défis stimulants et de contribuer au succès de l’entreprise.
                             </p>
                             <ul class="about-info mt-4 px-md-0 px-2" id="about">
-                                {{--  <li class="d-flex"><span>Last name:</span> <span>Ronaldo Fredrickson</span></li>
-		            	<li class="d-flex"><span>Name:</span> <span>November 28, 1989</span></li>
-		            	<li class="d-flex"><span>Address:</span> <span>San Francisco CA 97987 USA</span></li>
-		            	<li class="d-flex"><span>Phone: </span> <span>+1-2234-5678-9-0</span></li>
-                        <li class="d-flex"><span>Email:</span> <span>ronaldo@gmail.com</span></li>  --}}
+                              
 
                             </ul>
                         </div>

@@ -54,8 +54,8 @@ Route::get('/delete/{id}', [FormationsController::class, 'deleteFormation']);
 // experience table
 
 Route::get('/experience',[ExperiencesController::class,'getexperience']);
-Route::post('/create', [ExperiencesController::class, 'createExperience']);
-Route::post('/update/{id}', [ExperiencesController::class, 'updateExperience']);
-Route::get('/delete/{id}', [ExperiencesController::class, 'deleteExperience']);
+Route::post('/createExperience', [ExperiencesController::class, 'createExperience']);
+Route::post('/updateExperience/{id}', [ExperiencesController::class, 'updateExperience']);
+Route::get('/deleteExperience/{id}', [ExperiencesController::class, 'deleteExperience']);
 
 
